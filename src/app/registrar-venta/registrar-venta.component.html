@@ -1,0 +1,52 @@
+
+<br>
+<div id="container">
+<h3>Registra Nueva Venta</h3>
+<form>
+
+  <section>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label >Nombre Cliente:</label>
+      <input type="text" class="form-control" maxlength="25" [(ngModel)]="cliente.nombreCliente" name="nombreCliente" placeholder="Nombre">
+    </div>
+    <div class="form-group col-md-4">
+      <label >Dirección Cliente</label>
+      <input type="text" class="form-control" maxlength="25" [(ngModel)]="cliente.direccion" name="direccion" placeholder="Dirección" [ngModelOptions]="{standalone: true}">
+    </div>
+  </div>
+</section>
+<section>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label >Numero Identificación</label>
+      <input type="text" class="form-control" maxlength="7" [(ngModel)]="cliente.identificacion" name="identificacion" placeholder="Identificación"  >
+    </div>
+    <div class="form-group col-md-4">
+      <label >Producto</label>
+      <select  class="form-control" name="producto" [(ngModel)]="cliente.producto">
+        <option *ngFor="let grupo of productos" value="{{grupo.nombreProducto}}">{{grupo.nombreProducto}}</option>
+        <option>Seleccione un producto</option>
+      </select>
+  
+    </div>
+
+  </div>
+</section>
+  <button type="submit" class="btn btn-primary" [disabled]="validarboton() " (click)="this.getNewCliente()">Registrar Compra</button>
+</form>
+<br>
+<br>
+<section>
+  <div class="avatar-container" >
+    <div class="avatar-circle" style="float: right;">
+      <div class="initials">{{n}}</div>
+    </div>
+  </div>
+</section>
+<br>
+<br>
+<app-lista-ventas></app-lista-ventas>
+
+<!-- <app-url-data></app-url-data> -->
+<!-- <h2>Cantidad de Ventas hasta el momento {{n}}</h2> -->

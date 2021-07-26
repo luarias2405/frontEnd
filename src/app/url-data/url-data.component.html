@@ -1,0 +1,33 @@
+<br>
+<h3>
+	Listado API
+  </h3>
+
+
+<div class="no-padding" >
+  <table class="table table-bordered table-condensed" sytle="table-layout:fixed">
+    <thead>
+      <tr>
+        <th style="text-align: center;">Nombre Persona</th>
+        <th style="text-align: center;">Localidad Persona</th>
+       
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let personas of listaPersona">
+        <td>
+          <p>
+            <font size="small">{{personas.name}}</font>
+          </p>
+        </td>
+        <td>
+          <p>
+            <font size="small">{{personas.location }}</font>
+          </p>
+        </td>
+       
+      </tr>
+    </tbody>
+  </table>
+</div>

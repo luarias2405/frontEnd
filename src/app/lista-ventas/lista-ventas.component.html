@@ -1,0 +1,59 @@
+<h3>
+	Listado de Ventas
+  </h3>
+ <!-- <div *ngIf="! cliente.length">No se han registrado Compras por el momento</div> -->
+ <div class="no-padding"  *ngIf="cliente.length>0; else noExiste" >
+	<table class="table table-bordered table-condensed" sytle="table-layout:fixed" >
+	  <thead>
+		<tr  >
+		  <th style="text-align: center;">Nombre Cliente</th>
+		  <th style="text-align: center;">Dirección</th>
+		  <!-- <th style="text-align: center;">Identificación</th> -->
+		  <th style="text-align: center;">Producto</th>
+		  
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr *ngFor="let cliente of cliente">
+		  <td>
+			<p>
+				<font size="small">{{cliente.nombreCliente}}</font>
+			</p>
+		  </td>
+		  <td>
+			<p>
+				<font size="small">{{cliente.direccion}}</font>
+			</p>
+		  </td>
+		  <!-- <td>
+			<p>
+				<span>{{cliente.identificacion}}</span>
+			</p>
+		  </td> -->
+		  <td>
+			<p>
+				<font size="small">{{cliente.producto}}</font>
+			</p>
+		  </td>
+		</tr>
+	  </tbody>
+	</table>
+  </div>
+  <br>
+  <br>
+  <button type="submit" class="btn btn-primary" >
+	  <a href="/api" style="color:white">Obtener Valores API</a>
+	  
+	</button>
+
+ 
+  <ng-template #noExiste >
+	<div type="info" dismissible="" style="
+    color: red;">
+	  <i class="fa-fw fa fa-info"></i>
+	  No se han registrado Compras por el momento
+	</div>
+  </ng-template>
+ 
+ 
+ 
